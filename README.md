@@ -25,7 +25,7 @@ To a file that contains spdi canonical ids and genomic locations:
 
 ## Installation
 
-Requirements you will need to have [stack][1] available. On some servers that's available with the haskell installation (e.g.: `module load haskell`).
+Requirements you will need to have [stack][1] version >= 2.7 available. On the scc cluster you will need gcc version >= 8.3 (e.g `module load gcc/8.3.0`) and note that both wget/curl are already available. 
 
 1. Clone the repository:   `git clone https://github.com/achilleasNP/queryClinVar`
 2. Change to the local repository directory e.g: `cd queryClinVar`
