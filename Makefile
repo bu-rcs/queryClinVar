@@ -2,6 +2,13 @@
 
 build: bin/queryClinVar-exe
 
+test: bin/queryClinVar-exe
+	output_file="test_run_annotated.csv" && \
+	./bin/queryClinVar-exe example_popseq_file.csv "$${output_file}" && \
+	md5sum -c test_run.md5sum && \
+	rm -f "$${output_file}" && \
+	echo "Test passed"
+
 clean:
 	rm -rf  bin build 
 
