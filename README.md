@@ -25,16 +25,36 @@ To a file that contains spdi canonical ids and genomic locations:
 
 ## Installation
 
-Requirements you will need to have [stack][1] version >= 2.7 available. On the scc cluster you will need gcc version >= 8.3 (e.g `module load gcc/8.3.0`) and note that both wget/curl are already available. 
+Requirements you will need to have [stack][1] version >= 2.7 available. 
+
+On the scc cluster you will need gcc version >= 8.3 (e.g `module load gcc/8.3.0`) and note that both wget/curl are already available. 
+
+
+```
+module load gcc/11.2.0
+module load haskell/9.2.3
+```
 
 1. Clone the repository:   `git clone https://github.com/achilleasNP/queryClinVar`
 2. Change to the local repository directory e.g: `cd queryClinVar`
-3. Run stack build: `stack build`
-4. Optional run stack install `stack install`
+3. Run stack build: `stack build |&tee stack.build.output`
+4. Optional run stack install `stack install |&tee stack.install.output`
+
+Alternatively:
+
+1. Clone the repository:   `git clone https://github.com/achilleasNP/queryClinVar`
+2. Change to the local repository directory e.g: `cd queryClinVar`
+3. Run `make |&tee  make.output`
+
+Once software is installed, test if the executable file works:
+```
+bin/queryClinVar-exe --help
+```
+
 
 ## Usage
 
-- If you used stack install:
+
 ```
     queryClinVar-exe INPUT_FILE OUTPUT_FILE 
 ```
